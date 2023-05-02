@@ -34,7 +34,6 @@ export function Header() {
       position='fixed'
       top='0'
       bgcolor='white'
-      ù
       zIndex={1}
     >
       <NavLink to='/' style={{ width: '100px', marginLeft: '3rem' }}>
