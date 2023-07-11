@@ -3,192 +3,192 @@
     "Assiette_ovale": {
       "price": 0.2,
       "description": "Ø 27cm",
-      "image": "public/products/assiettes/assiette-1-510x510.jpg"
+      "image": "/products/assiettes/assiette-1-510x510.jpg"
     },
     "Assiette_carrée": {
       "price": 0.2,
       "description": "Ø 27cm",
-      "image": "public/products/assiettes/assiette-2-510x510.jpg"
+      "image": "/products/assiettes/assiette-2-510x510.jpg"
     },
     "Assiette_vague": {
       "price": 0.2,
       "description": "Ø 25cm",
-      "image": "public/products/assiettes/assiette-3-510x510.jpg"
+      "image": "/products/assiettes/assiette-3-510x510.jpg"
     },
     "Assiette_motif": {
       "price": 0.2,
       "description": "Ø 27cm",
-      "image": "public/products/assiettes/assiette-4-510x510.jpg"
+      "image": "/products/assiettes/assiette-4-510x510.jpg"
     },
     "Assiette_ronde": {
       "price": 0.2,
       "description": "Ø 24cm",
-      "image": "public/products/assiettes/assiette-8-510x510.jpg"
+      "image": "/products/assiettes/assiette-8-510x510.jpg"
     },
     "Assiette_transparente_dessert": {
       "price": 0.2,
       "description": "Ø 19cm",
-      "image": "public/products/assiettes/assiette6-1-510x510.jpg"
+      "image": "/products/assiettes/assiette6-1-510x510.jpg"
     },
     "Assiette_ronde_dessert": {
       "price": 0.2,
       "description": "Ø 20.5cm",
-      "image": "public/products/assiettes/assiette-5-510x510.jpg"
+      "image": "/products/assiettes/assiette-5-510x510.jpg"
     },
     "Assiette_à_soupe": {
       "price": 0.2,
       "description": "Ø 22cm",
-      "image": "public/products/assiettes/assiette-soupe-510x510.jpg"
+      "image": "/products/assiettes/assiette-soupe-510x510.jpg"
     },
     "Assiette_à_dessert": {
       "price": 0.2,
       "description": "Ø 19cm",
-      "image": "public/products/assiettes/assiette-dessertmotif-1-510x510.jpg"
+      "image": "/products/assiettes/assiette-dessertmotif-1-510x510.jpg"
     }
   },
   "Verres": {
     "Verre_élégance": {
       "price": 0.2,
       "description": "19cl et 24cl",
-      "image": "public/products/verres/verre1-510x510.jpg"
+      "image": "/products/verres/verre1-510x510.jpg"
     },
     "Verre_hexa": {
       "price": 0.2,
       "description": "12cl",
-      "image": "public/products/verres/verre2-510x510.jpg"
+      "image": "/products/verres/verre2-510x510.jpg"
     },
     "Flûte": {
       "price": 0.2,
       "description": "",
-      "image": "public/products/verres/verre3-510x510.jpg"
+      "image": "/products/verres/verre3-510x510.jpg"
     },
     "Verre_enfant": {
       "price": 0.2,
       "description": "",
-      "image": "public/products/verres/verre4-510x510.jpg"
+      "image": "/products/verres/verre4-510x510.jpg"
     },
     "Verre_dégustation": {
       "price": 0.2,
       "description": "33cl",
-      "image": "public/products/verres/verredegustation33-510x510.jpg"
+      "image": "/products/verres/verredegustation33-510x510.jpg"
     },
     "Verre_viticole": {
       "price": 0.2,
       "description": "24cl",
-      "image": "public/products/verres/verreviticole-510x510.jpg"
+      "image": "/products/verres/verreviticole-510x510.jpg"
     },
     "Verre_jus_de_fruit": {
       "price": 0.2,
       "description": "",
-      "image": "public/products/verres/verrejus-510x510.jpg"
+      "image": "/products/verres/verrejus-510x510.jpg"
     }
   },
   "Couverts": {
     "Couvert_champêtre": {
       "price": 0.15,
       "description": "Prix à l'unité",
-      "image": "public/products/couverts/couvert-1-510x510.jpg"
+      "image": "/products/couverts/couvert-1-510x510.jpg"
     },
     "Couvert_festif": {
       "price": 0.2,
       "description": "Prix à l'unité",
-      "image": "public/products/couverts/couvert-4-510x510.jpg"
+      "image": "/products/couverts/couvert-4-510x510.jpg"
     },
     "Couvert_cérémonie": {
       "price": 0.2,
       "description": "Prix à l'unité",
-      "image": "public/products/couverts/couvert-3-510x510.jpg"
+      "image": "/products/couverts/couvert-3-510x510.jpg"
     },
     "Couvert_à_dessert": {
       "price": 0.2,
       "description": "Prix à l'unité",
-      "image": "public/products/couverts/couvert-6-510x510.jpg"
+      "image": "/products/couverts/couvert-6-510x510.jpg"
     },
     "Couvert_à_poisson": {
       "price": 0.2,
       "description": "Prix à l'unité",
-      "image": "public/products/couverts/couevrtdessert-510x510.jpg"
+      "image": "/products/couverts/couevrtdessert-510x510.jpg"
     }
   },
   "Desserts_et_café": {
     "Tasses_festives": {
       "price": 0.2,
       "description": "",
-      "image": "public/products/desserts_cafe/tasse-1-510x510.jpg"
+      "image": "/products/desserts_cafe/tasse-1-510x510.jpg"
     },
     "Tasses_champêtre": {
       "price": 0.15,
       "description": "",
-      "image": "public/products/desserts_cafe/tasse-2-510x510.jpg"
+      "image": "/products/desserts_cafe/tasse-2-510x510.jpg"
     },
     "Mini_ramequins": {
       "price": 0.2,
       "description": "",
-      "image": "public/products/desserts_cafe/ramequin1-1-510x510.jpg"
+      "image": "/products/desserts_cafe/ramequin1-1-510x510.jpg"
     },
     "Coupelles": {
       "price": 0.2,
       "description": "",
-      "image": "public/products/desserts_cafe/ramequin2-510x510.jpg"
+      "image": "/products/desserts_cafe/ramequin2-510x510.jpg"
     }
   },
   "Accessoires_pour_la_table": {
     "Plat_gastro": {
       "price": 3,
       "description": "Couvercle 1€ en supplément",
-      "image": "public/products/accessoires/platgastro-1-510x510.jpg"
+      "image": "/products/accessoires/platgastro-1-510x510.jpg"
     },
     "Seau_à_champagne": {
       "price": 2,
       "description": "",
-      "image": "public/products/accessoires/panier-2-510x510.jpg"
+      "image": "/products/accessoires/panier-2-510x510.jpg"
     },
     "Panière": {
       "price": 0.2,
       "description": "",
-      "image": "public/products/accessoires/panier-1-510x510.jpg"
+      "image": "/products/accessoires/panier-1-510x510.jpg"
     },
     "Pot_à_eau": {
       "price": 0.5,
       "description": "",
-      "image": "public/products/accessoires/pot-a-eau-510x510.jpg"
+      "image": "/products/accessoires/pot-a-eau-510x510.jpg"
     },
     "Saladier": {
       "price": 0.5,
       "description": "",
-      "image": "public/products/accessoires/saladier-510x510.jpg"
+      "image": "/products/accessoires/saladier-510x510.jpg"
     },
     "Couverts": {
       "price": 0.5,
       "description": "",
-      "image": "public/products/accessoires/couvert-salade-510x510.jpg"
+      "image": "/products/accessoires/couvert-salade-510x510.jpg"
     }
   },
   "Mobiliers_et_machines": {
     "Machine_à_café": {
       "price": 15,
       "description": "100 tasses",
-      "image": "public/products/mobiliers_machines/machine-cxafe-510x510.jpg"
+      "image": "/products/mobiliers_machines/machine-cxafe-510x510.jpg"
     },
     "Machine_réfrigirante_2x8_L": {
       "price": 30,
       "description": "",
-      "image": "public/products/mobiliers_machines/machineaboisson-510x510.jpg"
+      "image": "/products/mobiliers_machines/machineaboisson-510x510.jpg"
     },
     "Machine_réfrigirante_2x16_L": {
       "price": 40,
       "description": "",
-      "image": "public/products/mobiliers_machines/machineaboisson-510x510.jpg"
+      "image": "/products/mobiliers_machines/machineaboisson-510x510.jpg"
     },
     "Machine_réfrigirante_45_L": {
       "price": 50,
       "description": "",
-      "image": "public/products/mobiliers_machines/machineaboisson2-510x510.jpg"
+      "image": "/products/mobiliers_machines/machineaboisson2-510x510.jpg"
     },
     "Mange_debout": {
       "price": 7,
       "description": "Supplément 5€ pour la housse",
-      "image": "public/products/mobiliers_machines/table-510x510.jpg"
+      "image": "/products/mobiliers_machines/table-510x510.jpg"
     }
   }
 }

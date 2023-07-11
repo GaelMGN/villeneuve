@@ -3,24 +3,33 @@ import { Params, useParams } from 'react-router-dom';
 import { ProductBanner } from './ProductBanner';
 import { useEffect, useState } from 'react';
 import { ProductGrid } from './ProductGrid';
+import productsJson from '../../assets/products.json';
+import { capitalizeFirstLetter } from '../../utils/stringUtils';
+import { ProductInfo } from '../../types/types';
 
 export function Produits() {
   const { product } = useParams<Params>();
   if (!product) return null;
 
-  const [thumbnails, setThumbnails] = useState<string[]>([]);
+  const [productsInfos, setProductsInfos] = useState<ProductInfo[]>([]);
 
   useEffect(() => {
-    // get all the images from public /products /{product} folder
-    const images = Object.keys(import.meta.glob(`../../assets/*/*.{jpg,png}`));
-    // filter the images to get only the ones that match the product
-    const productThumbnails = images.filter((image) => image.includes(product));
-    // replace ../assets/ with /products/ in the path
-    productThumbnails.forEach((thumbnail, index) => {
-      productThumbnails[index] = thumbnail.replace('../assets/', '/products/');
+    // get the product values from the json file and filter them to get only the ones that match the product
+    const productValues = Object.entries(productsJson)
+      .filter((entry) => {
+        return entry[0].split('_').includes(capitalizeFirstLetter(product));
+      })
+      .flat()[1];
+
+    // get the names of the products
+    const names = Object.keys(productValues);
+
+    // insert name in the productValues
+    const dataObject = Object.values(productValues).map((productValue, index) => {
+      return { name: names[index], ...productValue };
     });
-    // set the state
-    setThumbnails(productThumbnails);
+
+    setProductsInfos(dataObject);
   }, [product]);
 
   return (
@@ -31,7 +40,7 @@ export function Produits() {
       justifyContent='center'
       alignItems='center'>
       <ProductBanner product={product} />
-      <ProductGrid thumbnails={thumbnails} product={product} />;
+      <ProductGrid productsInfos={productsInfos} />;
     </Box>
   );
 }
