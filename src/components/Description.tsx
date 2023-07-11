@@ -24,7 +24,11 @@ export function Description(props: Props) {
       flexDirection='column'
       fontSize='1.4rem'>
       {textArray.map((text, index) => {
-        return <p style={{ margin: '0.5rem' }}>{text}.</p>;
+        return (
+          <p style={{ margin: '0.5rem' }} key={index}>
+            {text}.
+          </p>
+        );
       })}
     </Box>
   );

@@ -34,16 +34,10 @@ export function Header() {
       position='fixed'
       top='0'
       bgcolor='white'
-      zIndex={1}
-    >
+      zIndex={1}>
       <NavLink to='/' style={{ width: '100px', marginLeft: '3rem' }}>
         <Button sx={{ borderRadius: '15%' }}>
-          <img
-            src={logo}
-            alt='Logo Location Vaisselle Villeneuve'
-            width='100%'
-            height='100%'
-          />
+          <img src={logo} alt='Logo Location Vaisselle Villeneuve' width='100%' height='100%' />
         </Button>
       </NavLink>
       <Box
@@ -52,15 +46,13 @@ export function Header() {
         alignItems='center'
         width='180px'
         height='100%'
-        marginRight='3rem'
-      >
+        marginRight='3rem'>
         <Button
           sx={{
             borderRadius: '15%',
           }}
           onClick={handleClick}
-          onMouseEnter={handleClick}
-        >
+          onMouseEnter={handleClick}>
           Locations
         </Button>
         <Menu
@@ -69,14 +61,12 @@ export function Header() {
           open={open}
           onClose={handleClose}
           MenuListProps={{ onMouseLeave: handleClose }}
-          disableScrollLock
-        >
-          {products.map((product) => (
+          disableScrollLock>
+          {products.map((product, index) => (
             <NavLink
               style={{ textDecoration: 'none', color: 'black' }}
               to={`/produits/${product.split(' ')[0].toLowerCase()}`}
-              key={product}
-            >
+              key={`${product}-${index}`}>
               {/* remove link style */}
               <MenuItem sx={{ justifyContent: 'center' }} onClick={handleClose}>
                 {product.toUpperCase()}
@@ -88,8 +78,7 @@ export function Header() {
           <Button
             sx={{
               borderRadius: '15%',
-            }}
-          >
+            }}>
             Contact
           </Button>
         </NavLink>

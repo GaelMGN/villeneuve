@@ -3,7 +3,7 @@ import backgroundImage from '../assets/background.jpg';
 import logo from '../assets/logos/logo_lv2.png';
 import { Description } from './Description';
 import { Line } from './Line';
-import { ProductGrid } from './ProductGrid';
+import { CategoryGrid } from './CategoryGrid';
 
 export function Accueil() {
   const products = [
@@ -47,7 +47,7 @@ Installé à Villeneuve, nous vous proposons un service convivial de qualité po
 Nous restons joignables pour tout renseignements et réservations.'
       />
       <Line />
-      <ProductGrid products={products} />
+      <CategoryGrid products={products} />
     </Box>
   );
 }

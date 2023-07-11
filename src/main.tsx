@@ -6,7 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Footer } from './components/Footer';
 import { Contact } from './components/Contact';
-import { Produits } from './components/Produits';
+import { Produits } from './components/ProductPage/Products';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <Routes>
         <Route index element={<Accueil />} />
         <Route path='/Contact' element={<Contact />} />
-        <Route path='/produits' element={<Produits />} />
+        <Route path='/produits/:product' element={<Produits />} />
       </Routes>
       <Footer />
     </Router>

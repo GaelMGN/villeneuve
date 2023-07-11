@@ -5,7 +5,7 @@ type Props = {
   products: string[];
 };
 
-export function ProductGrid(props: Props) {
+export function CategoryGrid(props: Props) {
   const { products } = props;
 
   return (
@@ -17,8 +17,8 @@ export function ProductGrid(props: Props) {
       justifyContent='center'
       py={{ xs: 2, md: 4 }}
       sx={{ backgroundColor: '#efefef', padding: '2rem' }}>
-      {products.map((product: string) => (
-        <Grid item xs={12} sm={8} md={2}>
+      {products.map((product: string, index) => (
+        <Grid item xs={12} sm={8} md={2} key={product + index}>
           <Card title={product.toUpperCase()} image={`/tooltips/${product}.jpg`} />
         </Grid>
       ))}
