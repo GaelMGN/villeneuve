@@ -31,7 +31,8 @@ export function Card(props: Props) {
       onMouseOut={(e) => {
         e.currentTarget.style.transition = '0.3s';
         e.currentTarget.style.transform = 'translateY(0)';
-      }}>
+      }}
+    >
       <img
         src={image}
         alt={title}
@@ -44,21 +45,23 @@ export function Card(props: Props) {
         justifyContent='center'
         alignItems='center'
         textAlign='center'
+        flexDirection='column'
         width='100%'
         flexWrap={{ xs: 'wrap', md: 'nowrap' }}
         height={{ xs: '100%', md: '100px' }}
         padding='1rem'
         borderRadius='1rem'
         bgcolor='white'
-        fontSize={{ xs: '2.2rem', md: '1.1rem', lg: '1.5rem' }}>
+        fontSize={{ xs: '2.2rem', md: '1.1rem', lg: '1.5rem' }}
+      >
         <p>{title.replaceAll('_', ' ')}</p>
+        {props.price && (
+          <Box>
+            <p style={{ fontWeight: 'bold' }}>Prix : {props.price}€</p>
+            {props.description && <p>{props.description}</p>}
+          </Box>
+        )}
       </Box>
-      {props.price && (
-        <Box>
-          <p style={{ fontWeight: 'bold' }}>Prix : {props.price}€</p>
-          {props.description && <p>{props.description}</p>}
-        </Box>
-      )}
     </Box>
   );
 
@@ -69,7 +72,8 @@ export function Card(props: Props) {
   return (
     <NavLink
       to={`/produits/${title.split('_')[0].toLowerCase()}`}
-      style={{ textDecoration: 'none', color: 'black' }}>
+      style={{ textDecoration: 'none', color: 'black' }}
+    >
       {card}
     </NavLink>
   );
