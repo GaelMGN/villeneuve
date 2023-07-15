@@ -40,7 +40,6 @@ export const Cart = () => {
           </TableHead>
           {/* Table Body */}
           {items.map((item: Item) => {
-            if (item.quantity === 0) return null;
             return (
               <TableRow sx={{ bgcolor: 'lightblue' }}>
                 <TableCell>{replaceUnderscores(item.name)}</TableCell>
@@ -50,6 +49,7 @@ export const Cart = () => {
                     size='small'
                     // make the width of the input smaller
                     sx={{ width: '5rem' }}
+                    inputProps={{ min: 1 }}
                     value={item.quantity}
                     onChange={(e) => handleChange(Number(e.target.value), item.name)}
                   />

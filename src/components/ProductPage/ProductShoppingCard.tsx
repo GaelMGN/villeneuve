@@ -31,7 +31,7 @@ export const ProductShoppingCard = (props: Props) => {
       price: product.price,
       quantity,
     };
-    dispatch(addItemToCart(items));
+    if (quantity > 0) dispatch(addItemToCart(items));
   };
 
   /**
