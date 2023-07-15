@@ -18,6 +18,7 @@ import { Produits } from './components/ProductPage/Products';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import cart from './reducers/cart';
+import { Cart } from './components/Cart';
 
 const store = configureStore({
   reducer: { cart },
@@ -32,6 +33,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Routes>
           <Route index element={<Accueil />} />
           <Route path='/Contact' element={<Contact />} />
+          <Route path='/cart' element={<Cart />} />
           <Route path='/produits/:product' element={<Produits />} />
         </Routes>
         <Footer />

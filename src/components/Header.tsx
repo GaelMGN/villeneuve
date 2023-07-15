@@ -35,16 +35,19 @@ export function Header() {
       top='0'
       bgcolor='white'
       zIndex={1}>
+      {/* LOGO */}
       <NavLink to='/' style={{ width: '100px', marginLeft: '3rem' }}>
         <Button sx={{ borderRadius: '15%' }}>
           <img src={logo} alt='Logo Location Vaisselle Villeneuve' width='100%' height='100%' />
         </Button>
       </NavLink>
+
+      {/* RIGHT MENU*/}
       <Box
         display='flex'
         justifyContent='space-between'
         alignItems='center'
-        width='180px'
+        width='300px'
         height='100%'
         marginRight='3rem'>
         <Button
@@ -55,6 +58,15 @@ export function Header() {
           onMouseEnter={handleClick}>
           Locations
         </Button>
+        {/* menu to display the products */}
+        <NavLink to='/cart' style={{ textDecoration: 'none', color: 'black' }}>
+          <Button
+            sx={{
+              borderRadius: '15%',
+            }}>
+            Panier
+          </Button>
+        </NavLink>
         <Menu
           id='basic-menu'
           anchorEl={anchorEl}
