@@ -1,6 +1,8 @@
 import { Box, Button, Grid, TextField, Typography } from '@mui/material';
-import { ProductInfo } from '../../types/types';
-import { useState } from 'react';
+import { Item, ProductInfo } from '../../types/types';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItemToCart } from '../../reducers/cart';
 
 type Props = {
   product: ProductInfo;
@@ -9,8 +11,39 @@ type Props = {
 export const ProductShoppingCard = (props: Props) => {
   const { product } = props;
 
+  // import redux actions
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state: any) => state.cart.items);
+
   //   states
   const [quantity, setQuantity] = useState<number>(0);
+
+  // useEffect to update the quantity of the product based on the cart
+  useEffect(() => {
+    const item = cartItems.find((item: Item) => item.name === product.name);
+    if (item) setQuantity(item.quantity);
+    else setQuantity(0);
+  }, [cartItems, product.name]);
+
+  // DTO function
+  const addToCart = (product: ProductInfo, quantity: number) => {
+    if (quantity === 0) return;
+    const items: Item = {
+      name: product.name,
+      price: product.price,
+      quantity,
+    };
+    dispatch(addItemToCart(items));
+  };
+
+  /**
+   * Handle the click on the button to add the product to the shopping cart
+   * @param {ProductInfo} product
+   * @param {number} quantity
+   */
+  const handleAddToCart = (product: ProductInfo, quantity: number) => {
+    addToCart(product, quantity);
+  };
 
   return (
     <>
@@ -32,8 +65,7 @@ export const ProductShoppingCard = (props: Props) => {
         onMouseOut={(e) => {
           e.currentTarget.style.transition = '0.3s';
           e.currentTarget.style.transform = 'translateY(0)';
-        }}
-      >
+        }}>
         <img
           src={product.image}
           alt={product.name}
@@ -49,12 +81,9 @@ export const ProductShoppingCard = (props: Props) => {
           direction='column'
           justifyContent='space-around'
           height='100%'
-          paddingBottom='0.5rem'
-        >
+          paddingBottom='0.5rem'>
           <Typography>{product.name.replaceAll('_', ' ')}</Typography>
-          <Typography style={{ fontWeight: 'bold' }}>
-            Prix : {product.price}€
-          </Typography>
+          <Typography style={{ fontWeight: 'bold' }}>Prix : {product.price}€</Typography>
           <Typography>{product.description || "Prix à l'unité"}</Typography>
         </Grid>
         {/* input to add product to the cart */}
@@ -63,9 +92,11 @@ export const ProductShoppingCard = (props: Props) => {
           label='Quantité'
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}
+          // min value is 0
+          inputProps={{ min: 0 }}
         />
         {/* callback to add the product to the shopping cart */}
-        <Button>Ajouter au panier</Button>
+        <Button onClick={() => handleAddToCart(product, quantity)}>Ajouter au panier</Button>
       </Box>
     </>
   );
