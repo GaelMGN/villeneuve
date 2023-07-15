@@ -6,3 +6,12 @@
 export const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
+
+/**
+ * Replace underscores with spaces
+ * @param string
+ * @returns the string with underscores replaced with spaces
+ */
+export const replaceUnderscores = (string: string) => {
+  return string.replace(/_/g, ' ');
+};

@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import { replaceUnderscores } from '../utils/stringUtils';
 
 type Props = {
   title: string;
@@ -31,8 +32,7 @@ export function Card(props: Props) {
       onMouseOut={(e) => {
         e.currentTarget.style.transition = '0.3s';
         e.currentTarget.style.transform = 'translateY(0)';
-      }}
-    >
+      }}>
       <img
         src={image}
         alt={title}
@@ -52,9 +52,8 @@ export function Card(props: Props) {
         padding='1rem'
         borderRadius='1rem'
         bgcolor='white'
-        fontSize={{ xs: '2.2rem', md: '1.1rem', lg: '1.5rem' }}
-      >
-        <p>{title.replaceAll('_', ' ')}</p>
+        fontSize={{ xs: '2.2rem', md: '1.1rem', lg: '1.5rem' }}>
+        <p>{replaceUnderscores(title)}</p>
         {props.price && (
           <Box>
             <p style={{ fontWeight: 'bold' }}>Prix : {props.price}€</p>
@@ -72,8 +71,7 @@ export function Card(props: Props) {
   return (
     <NavLink
       to={`/produits/${title.split('_')[0].toLowerCase()}`}
-      style={{ textDecoration: 'none', color: 'black' }}
-    >
+      style={{ textDecoration: 'none', color: 'black' }}>
       {card}
     </NavLink>
   );

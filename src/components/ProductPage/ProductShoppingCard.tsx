@@ -22,12 +22,10 @@ export const ProductShoppingCard = (props: Props) => {
   useEffect(() => {
     const item = cartItems.find((item: Item) => item.name === product.name);
     if (item) setQuantity(item.quantity);
-    else setQuantity(0);
   }, [cartItems, product.name]);
 
   // DTO function
   const addToCart = (product: ProductInfo, quantity: number) => {
-    if (quantity === 0) return;
     const items: Item = {
       name: product.name,
       price: product.price,

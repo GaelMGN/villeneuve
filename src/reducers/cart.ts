@@ -18,23 +18,38 @@ export const cartSlice = createSlice({
     addItemToCart: (state, action) => {
       state.items.push(action.payload);
     },
+
     /**
      * This function removes an item from the cart.
      */
     removeItemFromCart: (state, action) => {
       state.items = state.items.filter((item) => item.name !== action.payload);
     },
+
     /**
-     * This function clears the cart.
+     * This function sets the quantity of an item in the cart.
      * @param state
      * @param action
      */
-    clearCart: (state, action) => {
-      state.items = [];
+    setItemQuantity: (state, action) => {
+      const { name, quantity } = action.payload;
+      const item = state.items.find((item) => item.name === name);
+      if (item) {
+        item.quantity = quantity;
+      }
+    },
+
+    /**
+     * This function clears one item from the cart.
+     * @param state
+     * @param action
+     */
+    clearItemFromCart: (state, action) => {
+      state.items = state.items.filter((item) => item.name !== action.payload);
     },
   },
 });
 
 // export the action creator
-export const { addItemToCart } = cartSlice.actions;
+export const { addItemToCart, setItemQuantity, clearItemFromCart } = cartSlice.actions;
 export default cartSlice.reducer;

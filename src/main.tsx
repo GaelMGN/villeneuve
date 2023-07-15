@@ -18,7 +18,7 @@ import { Produits } from './components/ProductPage/Products';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import cart from './reducers/cart';
-import { Cart } from './components/Cart';
+import { Cart } from './components/CartPage/Cart';
 
 const store = configureStore({
   reducer: { cart },

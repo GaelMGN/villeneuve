@@ -50,6 +50,14 @@ export function Header() {
         width='300px'
         height='100%'
         marginRight='3rem'>
+        <NavLink to='/cart' style={{ textDecoration: 'none', color: 'black' }}>
+          <Button
+            sx={{
+              borderRadius: '15%',
+            }}>
+            Panier
+          </Button>
+        </NavLink>
         <Button
           sx={{
             borderRadius: '15%',
@@ -59,14 +67,7 @@ export function Header() {
           Locations
         </Button>
         {/* menu to display the products */}
-        <NavLink to='/cart' style={{ textDecoration: 'none', color: 'black' }}>
-          <Button
-            sx={{
-              borderRadius: '15%',
-            }}>
-            Panier
-          </Button>
-        </NavLink>
+
         <Menu
           id='basic-menu'
           anchorEl={anchorEl}
