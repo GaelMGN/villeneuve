@@ -15,3 +15,11 @@ export const capitalizeFirstLetter = (string: string) => {
 export const replaceUnderscores = (string: string) => {
   return string.replace(/_/g, ' ');
 };
+
+/**
+ * Transform to 2 decimal with toFixed
+ * @param num
+ */
+export const to2Decimal = (num: number) => {
+  return num.toFixed(2);
+};
