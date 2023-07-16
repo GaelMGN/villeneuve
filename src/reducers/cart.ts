@@ -16,6 +16,14 @@ export const cartSlice = createSlice({
      * @param action
      */
     addItemToCart: (state, action) => {
+      // check if item already exists in cart
+      const item = state.items.find((item) => item.name === action.payload.name);
+      if (item) {
+        // if item exists, increase quantity
+        item.quantity += action.payload.quantity;
+        return;
+      }
+
       state.items.push(action.payload);
     },
 
