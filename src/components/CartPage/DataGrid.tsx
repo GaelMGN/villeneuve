@@ -28,7 +28,6 @@ export const DataGrid = (props: Props) => {
   const dispatch = useDispatch();
 
   const handleChange = (value: number, name: string) => {
-    console.log(value);
     dispatch(setItemQuantity({ name, quantity: value }));
   };
 
