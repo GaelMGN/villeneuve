@@ -4,6 +4,7 @@ import logo from '../assets/logos/logo_lv2.png';
 import { Description } from './Description';
 import { Line } from './Line';
 import { CategoryGrid } from './CategoryGrid';
+import { Header } from './Header';
 
 export function Accueil() {
   const products = [
@@ -16,10 +17,10 @@ export function Accueil() {
   ];
 
   return (
-    <Box>
+    <Box width='100%'>
+      <Header />
       <Box
         height='100vh'
-        width='100%'
         display='flex'
         justifyContent='center'
         flexDirection={{ xs: 'column', md: 'row' }}
@@ -31,9 +32,14 @@ export function Accueil() {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
-        }}>
+        }}
+      >
         <Box width={{ xs: '300px', md: '500px' }}>
-          <img src={logo} alt='Logo Location Vaisselle Villeneuve' width='100%' />
+          <img
+            src={logo}
+            alt='Logo Location Vaisselle Villeneuve'
+            width='100%'
+          />
         </Box>
         <Box display='flex' flexDirection='column' alignItems='center'>
           <h1>LOCATION VAISSELLE</h1>

@@ -31,24 +31,32 @@ export const DataGrid = (props: Props) => {
     dispatch(setItemQuantity({ name, quantity: value }));
   };
 
+  const isSmartphone = window.innerWidth < 600;
+
   return (
-    <Box display='flex' width='60%' sx={{ border: '1px solid black' }}>
+    <Box
+      display='flex'
+      width={{ sm: '100%', md: '60%' }}
+      sx={{ border: '1px solid black' }}
+    >
       <Table>
         {/* Table Head */}
         <TableHead>
           <TableRow>
             <TableCell>Nom</TableCell>
             <TableCell>Quantité</TableCell>
-            <TableCell>Prix unitaire HT</TableCell>
-            <TableCell>Prix total HT</TableCell>
-            <TableCell>TVA</TableCell>
+            {!isSmartphone && <TableCell>Prix unitaire HT</TableCell>}
+            {!isSmartphone && <TableCell>Prix total HT</TableCell>}
+            {!isSmartphone && <TableCell>TVA</TableCell>}
             <TableCell>Prix total TTC</TableCell>
             <TableCell>Supprimer</TableCell>
           </TableRow>
         </TableHead>
         {/* Table Body */}
         {items.map((item: Item) => {
-          const priceTimesQuantity = Number((item.price * item.quantity).toFixed(2));
+          const priceTimesQuantity = Number(
+            (item.price * item.quantity).toFixed(2)
+          );
           return (
             <TableRow sx={{ bgcolor: 'lightblue' }}>
               <TableCell>{replaceUnderscores(item.name)}</TableCell>
@@ -60,18 +68,27 @@ export const DataGrid = (props: Props) => {
                   sx={{ width: '5rem' }}
                   inputProps={{ min: 1 }}
                   value={item.quantity}
-                  onChange={(e) => handleChange(Number(e.target.value), item.name)}
+                  onChange={(e) =>
+                    handleChange(Number(e.target.value), item.name)
+                  }
                 />
               </TableCell>
-              <TableCell>{item.price} €</TableCell>
-              <TableCell>{priceTimesQuantity} €</TableCell>
-              <TableCell>{((priceTimesQuantity / 100) * 20).toFixed(2)} €</TableCell>
-              <TableCell>{((priceTimesQuantity / 100) * 120).toFixed(2)} €</TableCell>
+              {!isSmartphone && <TableCell>{item.price} €</TableCell>}
+              {!isSmartphone && <TableCell>{priceTimesQuantity} €</TableCell>}
+              {!isSmartphone && (
+                <TableCell>
+                  {((priceTimesQuantity / 100) * 20).toFixed(2)} €
+                </TableCell>
+              )}
+              <TableCell>
+                {((priceTimesQuantity / 100) * 120).toFixed(2)} €
+              </TableCell>
               <TableCell>
                 <Button
                   variant='contained'
                   color='error'
-                  onClick={() => dispatch(clearItemFromCart(item.name))}>
+                  onClick={() => dispatch(clearItemFromCart(item.name))}
+                >
                   X
                 </Button>
               </TableCell>

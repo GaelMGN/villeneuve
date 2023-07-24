@@ -22,7 +22,8 @@ export function Description(props: Props) {
       width='100%'
       alignItems='center'
       flexDirection='column'
-      fontSize='1.4rem'>
+      fontSize='1.4rem'
+    >
       {textArray.map((text, index) => {
         return (
           <p style={{ margin: '0.5rem' }} key={index}>

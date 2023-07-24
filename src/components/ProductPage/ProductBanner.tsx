@@ -23,13 +23,15 @@ export const ProductBanner = (props: Props) => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-      }}>
+      }}
+    >
       <Typography
         fontSize='4rem'
         color='white'
         textTransform='uppercase'
         fontWeight='bold'
-        letterSpacing='normal'>
+        letterSpacing='normal'
+      >
         {product?.toUpperCase()}
       </Typography>
     </Box>
