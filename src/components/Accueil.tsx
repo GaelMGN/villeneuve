@@ -37,8 +37,14 @@ export function Accueil() {
         <Box width={{ xs: '300px', md: '500px', lg: '700px' }}>
           <img src={logo} alt='Logo Location Vaisselle Villeneuve' width='100%' />
         </Box>
-        <Box display='flex' flexDirection='column' alignItems='center' gap='1rem'>
-          <Typography variant='h2'>LOCATION VAISSELLE</Typography>
+        <Box
+          display='flex'
+          flexDirection='column'
+          alignItems='center'
+          gap='1rem'
+          justifyContent='center'>
+          <Typography variant='h2'>LOCATION</Typography>
+          <Typography variant='h2'>VAISSELLE</Typography>
           <Typography variant='h4'>On loue, on lave</Typography>
         </Box>
       </Box>

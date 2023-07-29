@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 // css
 import CssBaseline from '@mui/material/CssBaseline';
+import './App.css';
 
 // router
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -26,6 +27,7 @@ const store = configureStore({
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <CssBaseline />
     <Provider store={store}>
       <Router>
         <Header />

@@ -17,6 +17,7 @@ import Button from '@mui/material/Button';
 
 // utils
 import { replaceUnderscores } from '../../utils/stringUtils';
+import { CartForm } from './CartForm';
 
 type Props = {
   items: Item[];
@@ -36,9 +37,10 @@ export const DataGrid = (props: Props) => {
   return (
     <Box
       display='flex'
+      flexDirection='column'
       width={{ sm: '100%', md: '60%' }}
-      sx={{ border: '1px solid black' }}
-    >
+      sx={{ border: '1px solid black' }}>
+      {/* Form pour devis*/}
       <Table>
         {/* Table Head */}
         <TableHead>
@@ -54,9 +56,7 @@ export const DataGrid = (props: Props) => {
         </TableHead>
         {/* Table Body */}
         {items.map((item: Item) => {
-          const priceTimesQuantity = Number(
-            (item.price * item.quantity).toFixed(2)
-          );
+          const priceTimesQuantity = Number((item.price * item.quantity).toFixed(2));
           return (
             <TableRow sx={{ bgcolor: 'lightblue' }}>
               <TableCell>{replaceUnderscores(item.name)}</TableCell>
@@ -68,27 +68,20 @@ export const DataGrid = (props: Props) => {
                   sx={{ width: '5rem' }}
                   inputProps={{ min: 1 }}
                   value={item.quantity}
-                  onChange={(e) =>
-                    handleChange(Number(e.target.value), item.name)
-                  }
+                  onChange={(e) => handleChange(Number(e.target.value), item.name)}
                 />
               </TableCell>
               {!isSmartphone && <TableCell>{item.price} €</TableCell>}
               {!isSmartphone && <TableCell>{priceTimesQuantity} €</TableCell>}
               {!isSmartphone && (
-                <TableCell>
-                  {((priceTimesQuantity / 100) * 20).toFixed(2)} €
-                </TableCell>
+                <TableCell>{((priceTimesQuantity / 100) * 20).toFixed(2)} €</TableCell>
               )}
-              <TableCell>
-                {((priceTimesQuantity / 100) * 120).toFixed(2)} €
-              </TableCell>
+              <TableCell>{((priceTimesQuantity / 100) * 120).toFixed(2)} €</TableCell>
               <TableCell>
                 <Button
                   variant='contained'
                   color='error'
-                  onClick={() => dispatch(clearItemFromCart(item.name))}
-                >
+                  onClick={() => dispatch(clearItemFromCart(item.name))}>
                   X
                 </Button>
               </TableCell>
