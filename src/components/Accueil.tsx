@@ -4,6 +4,7 @@ import logo from '../assets/logos/logo_lv2.png';
 import { Description } from './Description';
 import { Line } from './Line';
 import { CategoryGrid } from './CategoryGrid';
+import { Header } from './Header';
 
 export function Accueil() {
   const products = [
@@ -16,10 +17,10 @@ export function Accueil() {
   ];
 
   return (
-    <Box>
+    <Box width='100%'>
+      <Header />
       <Box
         height='100vh'
-        width='100%'
         display='flex'
         justifyContent='center'
         flexDirection={{ xs: 'column', md: 'row' }}

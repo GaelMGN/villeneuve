@@ -1,5 +1,4 @@
 import { Grid } from '@mui/material';
-import { Card } from '../Card';
 import { ProductInfo } from '../../types/types';
 import { ProductShoppingCard } from './ProductShoppingCard';
 

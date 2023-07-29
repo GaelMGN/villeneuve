@@ -25,9 +25,11 @@ export function Produits() {
     const names = Object.keys(productValues);
 
     // insert name in the productValues
-    const dataObject = Object.values(productValues).map((productValue, index) => {
-      return { name: names[index], ...productValue };
-    });
+    const dataObject = Object.values(productValues).map(
+      (productValue, index) => {
+        return { name: names[index], ...productValue };
+      }
+    );
 
     setProductsInfos(dataObject);
   }, [product]);
@@ -38,9 +40,10 @@ export function Produits() {
       display='flex'
       flexDirection='column'
       justifyContent='center'
-      alignItems='center'>
+      alignItems='center'
+    >
       <ProductBanner product={product} />
-      <ProductGrid productsInfos={productsInfos} />;
+      <ProductGrid productsInfos={productsInfos} />
     </Box>
   );
 }

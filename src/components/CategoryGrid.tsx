@@ -16,10 +16,15 @@ export function CategoryGrid(props: Props) {
       alignItems='center'
       justifyContent='center'
       py={{ xs: 2, md: 4 }}
-      sx={{ backgroundColor: '#efefef', padding: '2rem' }}>
+      sx={{ backgroundColor: '#efefef', padding: '2rem' }}
+    >
       {products.map((product: string, index) => (
         <Grid item xs={12} sm={8} md={2} key={product + index}>
-          <Card title={product.toUpperCase()} image={`/tooltips/${product}.jpg`} navLink />
+          <Card
+            title={product.toUpperCase()}
+            image={`/tooltips/${product}.jpg`}
+            navLink
+          />
         </Grid>
       ))}
     </Grid>

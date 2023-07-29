@@ -16,7 +16,8 @@ export const ProductShoppingCard = (props: Props) => {
   const cartItems = useSelector((state: any) => state.cart.items);
 
   //   states
-  const [quantity, setQuantity] = useState<number>(0);
+  const [quantity, setQuantity] = useState<number>();
+  const [isJustAdded, setJustAdded] = useState<boolean>(false);
 
   // useEffect to update the quantity of the product based on the cart
   useEffect(() => {
@@ -39,8 +40,13 @@ export const ProductShoppingCard = (props: Props) => {
    * @param {ProductInfo} product
    * @param {number} quantity
    */
-  const handleAddToCart = (product: ProductInfo, quantity: number) => {
+  const handleAddToCart = (product: ProductInfo, quantity?: number) => {
+    if (quantity === undefined) return;
     addToCart(product, quantity);
+    setJustAdded(true);
+    setTimeout(() => {
+      setJustAdded(false);
+    }, 1000);
   };
 
   return (
@@ -63,7 +69,8 @@ export const ProductShoppingCard = (props: Props) => {
         onMouseOut={(e) => {
           e.currentTarget.style.transition = '0.3s';
           e.currentTarget.style.transform = 'translateY(0)';
-        }}>
+        }}
+      >
         <img
           src={product.image}
           alt={product.name}
@@ -79,22 +86,37 @@ export const ProductShoppingCard = (props: Props) => {
           direction='column'
           justifyContent='space-around'
           height='100%'
-          paddingBottom='0.5rem'>
+          paddingBottom='0.5rem'
+        >
           <Typography>{product.name.replaceAll('_', ' ')}</Typography>
-          <Typography style={{ fontWeight: 'bold' }}>Prix : {product.price}€</Typography>
+          <Typography style={{ fontWeight: 'bold' }}>
+            Prix : {product.price}€
+          </Typography>
           <Typography>{product.description || "Prix à l'unité"}</Typography>
         </Grid>
         {/* input to add product to the cart */}
         <TextField
-          type='number'
           label='Quantité'
+          type='number'
           value={quantity}
+          required
           onChange={(e) => setQuantity(Number(e.target.value))}
           // min value is 0
           inputProps={{ min: 0 }}
+          InputLabelProps={{ shrink: true }}
         />
         {/* callback to add the product to the shopping cart */}
-        <Button onClick={() => handleAddToCart(product, quantity)}>Ajouter au panier</Button>
+        <Button
+          onClick={() => handleAddToCart(product, quantity)}
+          disabled={isJustAdded}
+          style={{
+            // fade in 1 sec after the product is added to the cart
+            transition: '0.3s',
+            color: isJustAdded ? 'lightGreen' : undefined,
+          }}
+        >
+          {isJustAdded ? 'Ajouté !' : 'Ajouter au panier'}
+        </Button>
       </Box>
     </>
   );
