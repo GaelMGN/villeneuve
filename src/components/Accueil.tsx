@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import backgroundImage from '../assets/background.jpg';
 import logo from '../assets/logos/logo_lv2.png';
 import { Description } from './Description';
@@ -25,6 +25,7 @@ export function Accueil() {
         flexDirection={{ xs: 'column', md: 'row' }}
         alignItems='center'
         gap={{ xs: 0, md: '2rem' }}
+        paddingTop={{ xs: '2rem', md: 0 }}
         sx={{
           backgroundImage: `linear-gradient(to bottom, rgba(222,222, 222, .85), rgba(222,222, 222, .85)),  url(${backgroundImage})`,
           backgroundSize: 'cover',
@@ -32,12 +33,12 @@ export function Accueil() {
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
         }}>
-        <Box width={{ xs: '300px', md: '500px' }}>
+        <Box width={{ xs: '300px', md: '500px', lg: '700px' }}>
           <img src={logo} alt='Logo Location Vaisselle Villeneuve' width='100%' />
         </Box>
-        <Box display='flex' flexDirection='column' alignItems='center'>
-          <h1>LOCATION VAISSELLE</h1>
-          <p>On loue, on lave</p>
+        <Box display='flex' flexDirection='column' alignItems='center' gap='1rem'>
+          <Typography variant='h2'>LOCATION VAISSELLE</Typography>
+          <Typography variant='h4'>On loue, on lave</Typography>
         </Box>
       </Box>
       <Line />
