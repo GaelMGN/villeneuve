@@ -35,6 +35,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <Route path='/Contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/produits/:product' element={<Produits />} />
+          <Route path='*' element={<Accueil />} />
         </Routes>
         <Footer />
       </Router>
