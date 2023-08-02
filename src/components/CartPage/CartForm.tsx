@@ -50,7 +50,12 @@ export const CartForm = (props: Props) => {
     e.preventDefault();
 
     emailjs
-      .send('service_1klnaud', 'template_f8aee5f', state, 'Rj3v6fTQMeKHkydqV')
+      .send(
+        import.meta.env.VITE_EMAIL_SERVICE_KEY,
+        import.meta.env.VITE_EMAIL_TEMPLATE_KEY,
+        state,
+        import.meta.env.VITE_EMAIL_KEY
+      )
       .then(
         (result) => {
           console.log(result.text);
