@@ -175,7 +175,19 @@ export const Cart = () => {
           </Box>
         </>
       ) : (
-        <Typography>Le panier est vide.</Typography>
+        <Box
+          display='flex'
+          flexDirection='column'
+          alignItems='center'
+          gap='1rem'
+          marginY='1rem'
+        >
+          <Typography>Le panier est vide.</Typography>
+          <img src='/panier_vide.png' alt='panier vide' width='300px' />
+          <Typography>
+            Choisissez au moins un produit pour le remplir 🍽️
+          </Typography>
+        </Box>
       )}
     </Box>
   );
