@@ -4,7 +4,6 @@ import logo from '../../assets/logos/logo_lv2.png';
 import { Description } from './Description';
 import { Line } from '../CommonComponents/Line';
 import { CategoryGrid } from './CategoryGrid';
-import { Header } from '../CommonComponents/Header';
 
 export function Accueil() {
   const products = [
@@ -18,7 +17,6 @@ export function Accueil() {
 
   return (
     <Box width='100%'>
-      <Header />
       <Box
         height='100vh'
         display='flex'
