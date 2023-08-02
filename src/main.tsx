@@ -8,10 +8,10 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // components
-import { Accueil } from './components/Accueil';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
-import { Contact } from './components/Contact/Contact';
+import { Accueil } from './components/HomePage/Home';
+import { Header } from './components/CommonComponents/Header';
+import { Footer } from './components/CommonComponents/Footer';
+import { Contact } from './components/ContactPage/Contact';
 import { Produits } from './components/ProductPage/Products';
 
 //  redux

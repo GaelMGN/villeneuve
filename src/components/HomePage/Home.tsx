@@ -1,10 +1,10 @@
 import { Box, Typography } from '@mui/material';
-import backgroundImage from '../assets/background.jpg';
-import logo from '../assets/logos/logo_lv2.png';
+import backgroundImage from '../../assets/background.jpg';
+import logo from '../../assets/logos/logo_lv2.png';
 import { Description } from './Description';
-import { Line } from './Line';
+import { Line } from '../CommonComponents/Line';
 import { CategoryGrid } from './CategoryGrid';
-import { Header } from './Header';
+import { Header } from '../CommonComponents/Header';
 
 export function Accueil() {
   const products = [
@@ -33,16 +33,22 @@ export function Accueil() {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
-        }}>
+        }}
+      >
         <Box width={{ xs: '300px', md: '500px', lg: '700px' }}>
-          <img src={logo} alt='Logo Location Vaisselle Villeneuve' width='100%' />
+          <img
+            src={logo}
+            alt='Logo Location Vaisselle Villeneuve'
+            width='100%'
+          />
         </Box>
         <Box
           display='flex'
           flexDirection='column'
           alignItems='center'
           gap='1rem'
-          justifyContent='center'>
+          justifyContent='center'
+        >
           <Typography variant='h2'>LOCATION</Typography>
           <Typography variant='h2'>VAISSELLE</Typography>
           <Typography variant='h4'>On loue, on lave</Typography>

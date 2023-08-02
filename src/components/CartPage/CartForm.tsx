@@ -128,7 +128,13 @@ export const CartForm = (props: Props) => {
             required
           />
         </Box>
-        <Box width='100%' display='flex' gap='1rem' padding='1rem'>
+        <Box
+          width='100%'
+          display='flex'
+          gap='1rem'
+          padding='1rem'
+          justifyContent='center'
+        >
           <TextField
             type='date'
             label='Date de début'

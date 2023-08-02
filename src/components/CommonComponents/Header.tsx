@@ -1,7 +1,7 @@
 import { Box, Button, Menu, MenuItem } from '@mui/material';
-import logo from '../assets/logos/logo_lv2.png';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import logo from '../../assets/logos/logo_lv2.png';
 
 export function Header() {
   const products: string[] = [
@@ -35,11 +35,17 @@ export function Header() {
       top='0'
       bgcolor='white'
       borderBottom='1px solid black'
-      zIndex={2}>
+      zIndex={2}
+    >
       {/* LOGO */}
       <NavLink to='/' style={{ width: '100px' }}>
         <Button sx={{ borderRadius: '15%' }}>
-          <img src={logo} alt='Logo Location Vaisselle Villeneuve' width='100%' height='100%' />
+          <img
+            src={logo}
+            alt='Logo Location Vaisselle Villeneuve'
+            width='100%'
+            height='100%'
+          />
         </Button>
       </NavLink>
 
@@ -50,12 +56,14 @@ export function Header() {
         alignItems='center'
         width='300px'
         height='100%'
-        marginRight='1rem'>
+        marginRight='1rem'
+      >
         <NavLink to='/cart' style={{ textDecoration: 'none', color: 'black' }}>
           <Button
             sx={{
               borderRadius: '15%',
-            }}>
+            }}
+          >
             Panier
           </Button>
         </NavLink>
@@ -64,7 +72,8 @@ export function Header() {
             borderRadius: '15%',
           }}
           onClick={handleClick}
-          onMouseEnter={handleClick}>
+          onMouseEnter={handleClick}
+        >
           Locations
         </Button>
         {/* menu to display the products */}
@@ -75,12 +84,14 @@ export function Header() {
           open={open}
           onClose={handleClose}
           MenuListProps={{ onMouseLeave: handleClose }}
-          disableScrollLock>
+          disableScrollLock
+        >
           {products.map((product, index) => (
             <NavLink
               style={{ textDecoration: 'none', color: 'black' }}
               to={`/produits/${product.split(' ')[0].toLowerCase()}`}
-              key={`${product}-${index}`}>
+              key={`${product}-${index}`}
+            >
               {/* remove link style */}
               <MenuItem sx={{ justifyContent: 'center' }} onClick={handleClose}>
                 {product.toUpperCase()}
@@ -92,7 +103,8 @@ export function Header() {
           <Button
             sx={{
               borderRadius: '15%',
-            }}>
+            }}
+          >
             Contact
           </Button>
         </NavLink>
