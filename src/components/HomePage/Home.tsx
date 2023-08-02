@@ -23,8 +23,8 @@ export function Accueil() {
         justifyContent='center'
         flexDirection={{ xs: 'column', md: 'row' }}
         alignItems='center'
-        gap={{ xs: 0, md: '2rem' }}
-        paddingTop={{ xs: '2rem', md: 0 }}
+        gap={'2rem'}
+        paddingTop={{ xs: 0, md: '4rem' }}
         sx={{
           backgroundImage: `linear-gradient(to bottom, rgba(222,222, 222, .85), rgba(222,222, 222, .85)),  url(${backgroundImage})`,
           backgroundSize: 'cover',
